@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rev_word_in_sen
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int count = 0;
+            Console.WriteLine("Enter a sentence :");
+            string str = Console.ReadLine();
+            char[] ch = str.ToCharArray();
+            Console.WriteLine("Your sentence after reverse :");
+
+            for (int i = ch.Length - 1; i >= 0; i--)
+            {
+                if (ch[i] != ' ')
+                {
+                    count++;
+                }
+                else if (ch[i] == ' ')
+                {
+                    for (int j = i + 1; count > 0; j++)
+                    {
+                        Console.Write(ch[j]);
+                        count--;
+                    }
+                    Console.Write(" ");
+
+                }
+
+            }
+            for (int k = 0; k < count; k++)
+            {
+                Console.Write(ch[k]);
+            }
+
+            Console.WriteLine();
+
+
+
+            //string input = Console.ReadLine();
+            //string[] words = input.Split(' ');
+
+            //Array.Reverse(words);
+
+            //string result = string.Join(" ", words);
+            //Console.WriteLine(result);
+
+        }
+
+    }
+
+}
